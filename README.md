@@ -90,6 +90,7 @@ Kullanılmayan komutlar:
 
 - [16bit Mips VHDL]
 - [MIPS-Processor-VHDL - Github]
+- [PiJoules/MIPS-processor]
 
 [Proje Ödevi]: ../res/2019_bilgisayar_mimarisi_proje.pdf
 [XILINX ISE Design Studio]: https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/design-tools.html
@@ -101,6 +102,7 @@ Kullanılmayan komutlar:
 
 [16bit Mips VHDL]: https://www.fpga4student.com/2017/09/vhdl-code-for-mips-processor.html
 [MIPS-Processor-VHDL - Github]: https://github.com/cm4233/MIPS-Processor-VHDL
+[PiJoules/MIPS-processor]: https://github.com/PiJoules/MIPS-processor
 
 ## Lisans ve Teferruatlar
 
