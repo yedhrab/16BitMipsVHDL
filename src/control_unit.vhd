@@ -28,7 +28,7 @@ begin
    sign_or_zero <= '1';
  else 
  case opcode is
-  when "000" => -- add
+  when "000" => -- R Type register
     reg_dst <= "01";
     mem_to_reg <= "00";
     alu_op <= "00";
@@ -61,7 +61,7 @@ begin
    alu_src <= '0';
    reg_write <= '0';
    sign_or_zero <= '1';
- when "011" => -- bne (new)
+ when "011" => -- bne
    reg_dst <= "10";
    mem_to_reg <= "10";
    alu_op <= "11";
