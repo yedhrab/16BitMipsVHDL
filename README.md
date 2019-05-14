@@ -12,7 +12,6 @@ Bilgisayar Mimarisi Proje Ödevi - 2019
     - [Simüle Etme](#sim%C3%BCle-etme)
   - [Teslim Şekli](#teslim-%C5%9Fekli)
 - [Çalışma Notları](#%C3%A7al%C4%B1%C5%9Fma-notlar%C4%B1)
-  - [Komut Notları](#komut-notlar%C4%B1)
   - [VHDL Yapısı](#vhdl-yap%C4%B1s%C4%B1)
 - [Olası Sorunlar](#olas%C4%B1-sorunlar)
 - [Yapılacaklar](#yap%C4%B1lacaklar)
@@ -81,19 +80,9 @@ Hocanın hazırlamış olduğu videolar:
 
 - `mips.vhd` dosyası `Implement top level module` olarak çalıştırılmalı
 - `testbench.vhd` dosyasının `Source` ayarlarında `All` yerine `Simulation` seçilmeli
-
-### Komut Notları
-
-Olmayan komutlar:
-
-- `Bne` (jal yerine bunu koyarız)
-- `Slt` (`sltiu` , değiştiririz)
-
-Kullanılmayan komutlar:
-
-- `jal`
-- `addi`
-- `sliu` (`sltiu` olarak kullanılmış )
+- `add`, `sub`, `and`, `slt` gibi komutlar R type'dır, **ALU OP** ile gerçekleştirilir
+- `X"..."` komutu 16bit anlamına gelmektedir
+  - `x"000"` değeri `"000000000000"` (4*3 = 12 tane 0) değerine denktir
 
 ### VHDL Yapısı
 
@@ -113,8 +102,9 @@ Kullanılmayan komutlar:
 - [16bit Mips VHDL]
 - [MIPS-Processor-VHDL - Github]
 - [PiJoules/MIPS-processor]
+- [dugagjin/MIPS]
 
-[Proje Ödevi]: ../res/2019_bilgisayar_mimarisi_proje.pdf
+[Proje Ödevi]: res\2019_bilgisayar_mimarisi_proje.pdf
 [XILINX ISE Design Studio]: https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/design-tools.html
 [XILINX ISE Design Studio - Direct]: https://xilinx-ax-dl.entitlenow.com/dl/ul/2018/02/21/R209898474/Xilinx_ISE_S6_Win10_14.7_ISE_VMs_0206_1.zip/70f417f0787735862bdf9e9e3107e2af/5CC73BF4?akdm=0&filename=Xilinx_ISE_S6_Win10_14.7_ISE_VMs_0206_1.zip
 [XILINX ISE Design Studio - Drive]: https://drive.google.com/open?id=1-4j-ZBZmA5axu2G3ebxcITROWsR2IUny
@@ -126,6 +116,7 @@ Kullanılmayan komutlar:
 [16bit Mips VHDL]: https://www.fpga4student.com/2017/09/vhdl-code-for-mips-processor.html
 [MIPS-Processor-VHDL - Github]: https://github.com/cm4233/MIPS-Processor-VHDL
 [PiJoules/MIPS-processor]: https://github.com/PiJoules/MIPS-processor
+[dugagjin/MIPS]: https://github.com/dugagjin/MIPS
 
 ## Lisans ve Teferruatlar
 
