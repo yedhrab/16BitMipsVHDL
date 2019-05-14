@@ -39,7 +39,7 @@ begin
     alu_src <= '0';
     reg_write <= '1';
     sign_or_zero <= '1';
-  when "001" => -- sltiu
+  when "001" => -- slti
    reg_dst <= "00";
    mem_to_reg <= "00";
    alu_op <= "10";
@@ -49,7 +49,7 @@ begin
    mem_write <= '0';
    alu_src <= '1';
    reg_write <= '1';
-   sign_or_zero <= '0';
+   sign_or_zero <= '1';
   when "010" => -- j
    reg_dst <= "00";
    mem_to_reg <= "00";
@@ -61,10 +61,10 @@ begin
    alu_src <= '0';
    reg_write <= '0';
    sign_or_zero <= '1';
- when "011" =>-- jal
+ when "011" => -- bne (new)
    reg_dst <= "10";
    mem_to_reg <= "10";
-   alu_op <= "00";
+   alu_op <= "11";
    jump <= '1';
    branch <=  '0';
    mem_read <=  '0';
