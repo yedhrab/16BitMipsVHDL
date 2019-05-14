@@ -2,9 +2,6 @@
 
 Bilgisayar Mimarisi Proje Ödevi - 2019
 
-- [Ödev metni][Proje Ödevi]
-- [Yararlanılan kaynak][16bit Mips VHDL]
-
 ## İçerikler <!-- omit in toc -->
 
 - [Gereksinimler](#gereksinimler)
@@ -13,7 +10,10 @@ Bilgisayar Mimarisi Proje Ödevi - 2019
     - [Proje Oluşturma](#proje-olu%C5%9Fturma)
     - [Proje İşlemleri](#proje-i%CC%87%C5%9Flemleri)
     - [Simüle Etme](#sim%C3%BCle-etme)
+  - [Teslim Şekli](#teslim-%C5%9Fekli)
 - [Çalışma Notları](#%C3%A7al%C4%B1%C5%9Fma-notlar%C4%B1)
+  - [Komut Notları](#komut-notlar%C4%B1)
+  - [VHDL Yapısı](#vhdl-yap%C4%B1s%C4%B1)
 - [Olası Sorunlar](#olas%C4%B1-sorunlar)
 - [Yapılacaklar](#yap%C4%B1lacaklar)
 - [Harici Bağlantılar](#harici-ba%C4%9Flant%C4%B1lar)
@@ -21,6 +21,10 @@ Bilgisayar Mimarisi Proje Ödevi - 2019
 
 ## Gereksinimler
 
+Proje ödevinin PDF'ine [buradan][Proje Ödevi] yararlandığım kaynağa [buradan][16bit Mips VHDL] ulaşabilirsin
+
+- Grup sayısı 5 kişiliktir
+- Son teslim tarihi: 15.05.2019 Çarşamba
 - XILINX ISE Design Studio
 - VHDL bilgisi
 
@@ -32,6 +36,7 @@ Bilgisayar Mimarisi Proje Ödevi - 2019
 - **XILINX ISE Design Studio**'yu direkt olarak [buradan][XILINX ISE Design Studio - Direct] indirebilirsin.
 - **Drive** üzerinden indirmek için [buraya][XILINX ISE Design Studio - Drive] bakabilirsin.
 - `VirtualBox host only adaptor disappeared (Interface (‘VirtualBox Host-Only Ethernet Adapter’) is not a Host-Only Adapter interface (VERR_INTERNAL_ERROR) SOLVED` hatası için [buraya][Hata Çözümü 1] bakabilirsin.
+- `Error: wait statement without UNTIL clause not supported for synthesis` sorunu çözümü için [buraya][Wait until sorunu] bakabilirsin.
 
 ### XILINX Kullanımı
 
@@ -64,7 +69,20 @@ Hocanın hazırlamış olduğu videolar:
     - Örn: `put tt_g1 0`
   - `run all` Hepsini çalıştırma
 
+### Teslim Şekli
+
+- Similasyon sonuçları raporlanacak ve pdf haline getirilecek
+- Verilen *instruction*'ların hepsi gerçekleştirilecek
+- Sonuçlar similatörde gösterilecek
+- PDF ile `.vhd` uzantılı kaynak kodlarını sisteme yüklenecek
+  - Aksis - Döküman paylaşımı - Bilgisayar Mimarisi - Proje
+
 ## Çalışma Notları
+
+- `mips.vhd` dosyası `Implement top level module` olarak çalıştırılmalı
+- `testbench.vhd` dosyasının `Source` ayarlarında `All` yerine `Simulation` seçilmeli
+
+### Komut Notları
 
 Olmayan komutlar:
 
@@ -77,14 +95,18 @@ Kullanılmayan komutlar:
 - `addi`
 - `sliu` (`sltiu` olarak kullanılmış )
 
+### VHDL Yapısı
+
+![src_explain](res/processorComponents.png)
+
 ## Olası Sorunlar
 
 - 16Bit olması sorun teşkil edebilir
 
 ## Yapılacaklar
 
-- [ ] Baz alınan kaynağın test edilmesi gerek
-- [ ] VHDL kodları dosyalı yapı ile bu projeye yerleştirilecek
+- [x] Baz alınan kaynağın test edilmesi gerek
+- [x] VHDL kodları dosyalı yapı ile bu projeye yerleştirilecek
 
 ## Harici Bağlantılar
 
@@ -99,6 +121,7 @@ Kullanılmayan komutlar:
 [XILINX ISE - Simulation]: https://youtu.be/H7jihUQz-Io?t=637
 [ISIM Simulator]: https://youtu.be/Sw5ktjHl1zc?t=576
 [Hata Çözümü 1]: https://darrenoneill.eu/?p=627
+[Wait until sorunu]: https://forums.xilinx.com/t5/General-Technical-Discussion/Error-wait-statement-without-UNTIL-clause-not-supported-for/m-p/496314/highlight/true#M19498
 
 [16bit Mips VHDL]: https://www.fpga4student.com/2017/09/vhdl-code-for-mips-processor.html
 [MIPS-Processor-VHDL - Github]: https://github.com/cm4233/MIPS-Processor-VHDL
