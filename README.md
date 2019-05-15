@@ -4,6 +4,10 @@ Bilgisayar Mimarisi Proje Ödevi - 2019
 
 ## İçerikler <!-- omit in toc -->
 
+- [Tanıtım](#tan%C4%B1t%C4%B1m)
+  - [Birebir Varsayımsal Eşleştirilmiş Hali](#birebir-varsay%C4%B1msal-e%C5%9Fle%C5%9Ftirilmi%C5%9F-hali)
+  - [İstenilene Göre Sadeleştirilmiş Hali](#i%CC%87stenilene-g%C3%B6re-sadele%C5%9Ftirilmi%C5%9F-hali)
+  - [Orjinal Hali](#orjinal-hali)
 - [Gereksinimler](#gereksinimler)
   - [XILINX ISE Design Studio](#xilinx-ise-design-studio)
   - [XILINX Kullanımı](#xilinx-kullan%C4%B1m%C4%B1)
@@ -12,11 +16,30 @@ Bilgisayar Mimarisi Proje Ödevi - 2019
     - [Simüle Etme](#sim%C3%BCle-etme)
   - [Teslim Şekli](#teslim-%C5%9Fekli)
 - [Çalışma Notları](#%C3%A7al%C4%B1%C5%9Fma-notlar%C4%B1)
+  - [Hata Çözümleri](#hata-%C3%A7%C3%B6z%C3%BCmleri)
+    - [VirtualBox Host only Adaptor Disappeared Hatası](#virtualbox-host-only-adaptor-disappeared-hatas%C4%B1)
+    - [Wait Statement Without UNTIL Clause not Supported for Synthesis Hatası](#wait-statement-without-until-clause-not-supported-for-synthesis-hatas%C4%B1)
+  - [Similasyon Notları](#similasyon-notlar%C4%B1)
+  - [Eksiklik Notları](#eksiklik-notlar%C4%B1)
   - [VHDL Yapısı](#vhdl-yap%C4%B1s%C4%B1)
 - [Olası Sorunlar](#olas%C4%B1-sorunlar)
 - [Yapılacaklar](#yap%C4%B1lacaklar)
 - [Harici Bağlantılar](#harici-ba%C4%9Flant%C4%B1lar)
-- [Lisans ve Teferruatlar](#lisans-ve-teferruatlar)
+- [Ekip Üyeleri](#ekip-%C3%BCyeleri)
+
+## Tanıtım
+
+### Birebir Varsayımsal Eşleştirilmiş Hali
+
+![birebir](res/Birebir&#32;Hali.png)
+
+### İstenilene Göre Sadeleştirilmiş Hali
+
+![sade](res/Sadeleştirilmiş&#32;hal.png)
+
+### Orjinal Hali
+
+![orijin](res/Orjinal&#32;Hali.png)
 
 ## Gereksinimler
 
@@ -34,8 +57,6 @@ Proje ödevinin PDF'ine [buradan][Proje Ödevi] yararlandığım kaynağa [burad
   - Password: `yemreak.com1`
 - **XILINX ISE Design Studio**'yu direkt olarak [buradan][XILINX ISE Design Studio - Direct] indirebilirsin.
 - **Drive** üzerinden indirmek için [buraya][XILINX ISE Design Studio - Drive] bakabilirsin.
-- `VirtualBox host only adaptor disappeared (Interface (‘VirtualBox Host-Only Ethernet Adapter’) is not a Host-Only Adapter interface (VERR_INTERNAL_ERROR) SOLVED` hatası için [buraya][Hata Çözümü 1] bakabilirsin.
-- `Error: wait statement without UNTIL clause not supported for synthesis` sorunu çözümü için [buraya][Wait until sorunu] bakabilirsin.
 
 ### XILINX Kullanımı
 
@@ -83,6 +104,44 @@ Hocanın hazırlamış olduğu videolar:
 - `add`, `sub`, `and`, `slt` gibi komutlar R type'dır, **ALU OP** ile gerçekleştirilir
 - `X"..."` komutu 16bit anlamına gelmektedir
   - `x"000"` değeri `"000000000000"` (4*3 = 12 tane 0) değerine denktir
+- Clock değerini otomatik olarak atamak için `isim force add {/mips_vhdl/clk} 1 -radix bin -value 0 -radix bin -time 100 ns -repeat 200 ns`
+
+### Hata Çözümleri
+
+#### VirtualBox Host only Adaptor Disappeared Hatası
+
+`VirtualBox host only adaptor disappeared (Interface (‘VirtualBox Host-Only Ethernet Adapter’) is not a Host-Only Adapter interface (VERR_INTERNAL_ERROR) SOLVED` hatası için [buraya][Hata Çözümü 1] bakabilirsin.
+
+![ss1](res/ss1.png)
+
+![ss2](res/ss2.png)
+
+![ss3](res/ss3.png)
+
+![ss4](res/ss4.png)
+
+#### Wait Statement Without UNTIL Clause not Supported for Synthesis Hatası
+
+`Error: wait statement without UNTIL clause not supported for synthesis` sorunu çözümü için [buraya][Wait until sorunu] bakabilirsin.
+
+![ss5](res/ss5.png)
+
+### Similasyon Notları
+
+Similasyonu çalıştırmak için yazdığımız komutlar.
+
+```isim
+put reset 1
+put clk 0
+run
+isim force add {/mips_vhdl/clk} 1 -radix bin -value 0 -radix bin -time 100 ns -repeat 200 ns
+put reset 0
+# 2.60us çalıştır
+```
+
+### Eksiklik Notları
+
+- `Bne` komutu elden eklendiği (out sinyal oluşturulmadığı) için `Branch_ne_out` değişkeni bulunmamaktadır
 
 ### VHDL Yapısı
 
@@ -104,7 +163,7 @@ Hocanın hazırlamış olduğu videolar:
 - [PiJoules/MIPS-processor]
 - [dugagjin/MIPS]
 
-[Proje Ödevi]: res\2019_bilgisayar_mimarisi_proje.pdf
+[Proje Ödevi]: https://drive.google.com/open?id=1eWEJXmVy-XBVtcUSaC1gVu5lnZK-_lmq
 [XILINX ISE Design Studio]: https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/design-tools.html
 [XILINX ISE Design Studio - Direct]: https://xilinx-ax-dl.entitlenow.com/dl/ul/2018/02/21/R209898474/Xilinx_ISE_S6_Win10_14.7_ISE_VMs_0206_1.zip/70f417f0787735862bdf9e9e3107e2af/5CC73BF4?akdm=0&filename=Xilinx_ISE_S6_Win10_14.7_ISE_VMs_0206_1.zip
 [XILINX ISE Design Studio - Drive]: https://drive.google.com/open?id=1-4j-ZBZmA5axu2G3ebxcITROWsR2IUny
@@ -118,21 +177,11 @@ Hocanın hazırlamış olduğu videolar:
 [PiJoules/MIPS-processor]: https://github.com/PiJoules/MIPS-processor
 [dugagjin/MIPS]: https://github.com/dugagjin/MIPS
 
-## Lisans ve Teferruatlar
+## Ekip Üyeleri
 
-> Bu ekip projesidir, ekip üyeleri:
->
-> - Yunus Emre Ak
-> - Sefa Yalçındağ
-> - Ahmet Demir
-> - Muhammed Furkan Yıldırım
+Bu ekip projesidir, ekip üyeleri:
 
-Bu yazı **MIT** lisanslıdır. Lisanslar hakkında bilgi almak için [buraya](https://choosealicense.com/licenses/) bakmanda fayda var.
-
-- [Github](https://github.com/yedhrab)
-- [Website](https://yemreak.com)
-- [LinkedIn](https://www.linkedin.com/in/yemreak/)
-
-> Yardım veya destek için [iletişime](mailto::yedhrab@gmail.com?subject=16BitMipsVHDL) geçebilrsiniz 🤗
-
-~ Yunus Emre Ak
+- Yunus Emre Ak
+- Sefa Yalçındağ
+- Ahmet Demir
+- Muhammed Furkan Yıldırım
