@@ -181,7 +181,9 @@ put reset 0
 
 Bu ekip projesidir, ekip üyeleri:
 
-- Yunus Emre Ak
-- Sefa Yalçındağ
-- Ahmet Demir
-- Muhammed Furkan Yıldırım
+| İsim                     | Öğrenci No |
+| ------------------------ | ---------- |
+| Yunus Emre Ak            | 1306150001 |
+| Sefa Yalçındağ           | 1306150069 |
+| Ahmet Demir              | 1306150003 |
+| Muhammed Furkan Yıldırım | 1306150032 |
