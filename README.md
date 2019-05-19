@@ -2,6 +2,13 @@
 
 Bilgisayar Mimarisi Proje Ödevi - 2019
 
+| İsim                     | Öğrenci No |
+| ------------------------ | ---------- |
+| Yunus Emre Ak            | 1306150001 |
+| Sefa Yalçındağ           | 1306150069 |
+| Ahmet Demir              | 1306150003 |
+| Muhammed Furkan Yıldırım | 1306150032 |
+
 ## İçerikler <!-- omit in toc -->
 
 - [Tanıtım](#tan%C4%B1t%C4%B1m)
@@ -25,7 +32,8 @@ Bilgisayar Mimarisi Proje Ödevi - 2019
 - [Olası Sorunlar](#olas%C4%B1-sorunlar)
 - [Yapılacaklar](#yap%C4%B1lacaklar)
 - [Harici Bağlantılar](#harici-ba%C4%9Flant%C4%B1lar)
-- [Ekip Üyeleri](#ekip-%C3%BCyeleri)
+
+<div class="page"/>
 
 ## Tanıtım
 
@@ -40,6 +48,8 @@ Bilgisayar Mimarisi Proje Ödevi - 2019
 ### Orjinal Hali
 
 ![orijin](res/Orjinal&#32;Hali.png)
+
+<div class="page"/>
 
 ## Gereksinimler
 
@@ -89,6 +99,8 @@ Hocanın hazırlamış olduğu videolar:
     - Örn: `put tt_g1 0`
   - `run all` Hepsini çalıştırma
 
+<div class="page"/>
+
 ### Teslim Şekli
 
 - Similasyon sonuçları raporlanacak ve pdf haline getirilecek
@@ -113,12 +125,11 @@ Hocanın hazırlamış olduğu videolar:
 `VirtualBox host only adaptor disappeared (Interface (‘VirtualBox Host-Only Ethernet Adapter’) is not a Host-Only Adapter interface (VERR_INTERNAL_ERROR) SOLVED` hatası için [buraya][Hata Çözümü 1] bakabilirsin.
 
 ![ss1](res/ss1.png)
-
 ![ss2](res/ss2.png)
-
 ![ss3](res/ss3.png)
-
 ![ss4](res/ss4.png)
+
+<div class="page"/>
 
 #### Wait Statement Without UNTIL Clause not Supported for Synthesis Hatası
 
@@ -142,6 +153,8 @@ put reset 0
 ### Eksiklik Notları
 
 - `Bne` komutu elden eklendiği (out sinyal oluşturulmadığı) için `Branch_ne_out` değişkeni bulunmamaktadır
+
+<div class="page"/>
 
 ### VHDL Yapısı
 
@@ -176,14 +189,3 @@ put reset 0
 [MIPS-Processor-VHDL - Github]: https://github.com/cm4233/MIPS-Processor-VHDL
 [PiJoules/MIPS-processor]: https://github.com/PiJoules/MIPS-processor
 [dugagjin/MIPS]: https://github.com/dugagjin/MIPS
-
-## Ekip Üyeleri
-
-Bu ekip projesidir, ekip üyeleri:
-
-| İsim                     | Öğrenci No |
-| ------------------------ | ---------- |
-| Yunus Emre Ak            | 1306150001 |
-| Sefa Yalçındağ           | 1306150069 |
-| Ahmet Demir              | 1306150003 |
-| Muhammed Furkan Yıldırım | 1306150032 |
