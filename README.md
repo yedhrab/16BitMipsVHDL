@@ -2,6 +2,8 @@
 
 Bilgisayar Mimarisi Proje Ödevi - 2019
 
+> PDF için [buraya](./16BitMipsVHDL.pdf) bakabilirsin.
+
 | İsim                     | Öğrenci No |
 | ------------------------ | ---------- |
 | Yunus Emre Ak            | 1306150001 |
@@ -11,27 +13,27 @@ Bilgisayar Mimarisi Proje Ödevi - 2019
 
 ## İçerikler <!-- omit in toc -->
 
-- [Tanıtım](#tan%C4%B1t%C4%B1m)
-  - [Birebir Varsayımsal Eşleştirilmiş Hali](#birebir-varsay%C4%B1msal-e%C5%9Fle%C5%9Ftirilmi%C5%9F-hali)
-  - [İstenilene Göre Sadeleştirilmiş Hali](#i%CC%87stenilene-g%C3%B6re-sadele%C5%9Ftirilmi%C5%9F-hali)
-  - [Orjinal Hali](#orjinal-hali)
-- [Gereksinimler](#gereksinimler)
-  - [XILINX ISE Design Studio](#xilinx-ise-design-studio)
-  - [XILINX Kullanımı](#xilinx-kullan%C4%B1m%C4%B1)
-    - [Proje Oluşturma](#proje-olu%C5%9Fturma)
-    - [Proje İşlemleri](#proje-i%CC%87%C5%9Flemleri)
-    - [Simüle Etme](#sim%C3%BCle-etme)
-  - [Teslim Şekli](#teslim-%C5%9Fekli)
-- [Çalışma Notları](#%C3%A7al%C4%B1%C5%9Fma-notlar%C4%B1)
-  - [Hata Çözümleri](#hata-%C3%A7%C3%B6z%C3%BCmleri)
-    - [VirtualBox Host only Adaptor Disappeared Hatası](#virtualbox-host-only-adaptor-disappeared-hatas%C4%B1)
-    - [Wait Statement Without UNTIL Clause not Supported for Synthesis Hatası](#wait-statement-without-until-clause-not-supported-for-synthesis-hatas%C4%B1)
-  - [Similasyon Notları](#similasyon-notlar%C4%B1)
-  - [Eksiklik Notları](#eksiklik-notlar%C4%B1)
-  - [VHDL Yapısı](#vhdl-yap%C4%B1s%C4%B1)
-- [Olası Sorunlar](#olas%C4%B1-sorunlar)
-- [Yapılacaklar](#yap%C4%B1lacaklar)
-- [Harici Bağlantılar](#harici-ba%C4%9Flant%C4%B1lar)
+- [Tanıtım](#Tan%C4%B1t%C4%B1m)
+  - [Birebir Varsayımsal Eşleştirilmiş Hali](#Birebir-Varsay%C4%B1msal-E%C5%9Fle%C5%9Ftirilmi%C5%9F-Hali)
+  - [İstenilene Göre Sadeleştirilmiş Hali](#%C4%B0stenilene-G%C3%B6re-Sadele%C5%9Ftirilmi%C5%9F-Hali)
+  - [Orjinal Hali](#Orjinal-Hali)
+- [Gereksinimler](#Gereksinimler)
+  - [XILINX ISE Design Studio](#XILINX-ISE-Design-Studio)
+  - [XILINX Kullanımı](#XILINX-Kullan%C4%B1m%C4%B1)
+    - [Proje Oluşturma](#Proje-Olu%C5%9Fturma)
+    - [Proje İşlemleri](#Proje-%C4%B0%C5%9Flemleri)
+    - [Simüle Etme](#Sim%C3%BCle-Etme)
+  - [Teslim Şekli](#Teslim-%C5%9Eekli)
+- [Çalışma Notları](#%C3%87al%C4%B1%C5%9Fma-Notlar%C4%B1)
+  - [Hata Çözümleri](#Hata-%C3%87%C3%B6z%C3%BCmleri)
+    - [VirtualBox Host only Adaptor Disappeared Hatası](#VirtualBox-Host-only-Adaptor-Disappeared-Hatas%C4%B1)
+    - [Wait Statement Without UNTIL Clause not Supported for Synthesis Hatası](#Wait-Statement-Without-UNTIL-Clause-not-Supported-for-Synthesis-Hatas%C4%B1)
+  - [Similasyon Notları](#Similasyon-Notlar%C4%B1)
+  - [Eksiklik Notları](#Eksiklik-Notlar%C4%B1)
+  - [VHDL Yapısı](#VHDL-Yap%C4%B1s%C4%B1)
+- [Olası Sorunlar](#Olas%C4%B1-Sorunlar)
+- [Yapılacaklar](#Yap%C4%B1lacaklar)
+- [Harici Bağlantılar](#Harici-Ba%C4%9Flant%C4%B1lar)
 
 <div class="page"/>
 
